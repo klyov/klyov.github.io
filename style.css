@@ -5,8 +5,89 @@
 body {
   height: 100vh;
   margin: 0;
+  /*//  display: flex;*/
+
+  background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgb(196, 252, 199) 92%
+  );
+}
+
+.app {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid {
+  position: relative;
+  width: 300px;
+}
+
+.polaroid img {
+  border: 10px solid white;
+  border-bottom: 45px solid white;
+  width: 100%;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  color: #99a79a;
+}
+
+.music-player {
+  background-color: #99a79a;
+  border-radius: 15px;
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 5;
+  width: 220px;
+}
+
+.action-btn {
+  background-color: #99a79a;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.action-btn.action-btn-big {
+  color: white;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.progress-container {
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #b0fec0;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
 }
