@@ -4,30 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
     />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-    <title>klyov site</title>
+    <title>klyov</title>
   </head>
   <body>
     <div class="app">
-      <h1>Welcome</h1>
       <div class="content">
-        <div class="polaroid">
-          <p>klyov, oct 10, 2019</p>
-          <img src="images/photo.jpeg" alt="frontend-developer" />
-        </div>
-
-        <div class="music-player" id="music-player">
-          <div class="progress-container" id="progress-container">
-            <div class="progress" id="progress"></div>
+        <div class="about">
+          <div class="touch-me">
+            <div class="text pulse">Click me!</div>
+            <img src="images/arrow.svg" class="arrow" alt="arrow" />
           </div>
-          <audio src="music/intro.mp3" id="audio"></audio>
-          <div class="nav">
-            <button id="play" class="action-btn action-btn-big">
-              <i class="fas fa-play"></i>
-            </button>
+          <div class="polaroid">
+            <div class="music-player" id="music-player">
+              <audio src="music/intro.mp3" id="audio"></audio>
+              <img class="img-play" src="images/pin.png" alt="pin" id="play" />
+            </div>
+
+            <img
+              class="my-photo"
+              src="images/photo.jpeg"
+              alt="frontend-developer"
+            />
+
+            <div class="telegram-link">
+              <div id="telegram-link" class="tg-text">
+                telegram:
+                <a target="_blank" href="https://teleg.run/lyovin_kirill"
+                  >lyovin_kirill</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>

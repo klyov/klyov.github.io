@@ -1,20 +1,17 @@
 const musicPlayer = document.getElementById("music-player");
 const playBtn = document.getElementById("play");
 const audio = document.getElementById("audio");
-const progress = document.getElementById("progress");
-const progressContainer = document.getElementById("progress-container");
+const telegramLink = document.getElementById("telegram-link");
 
 function pause() {
   musicPlayer.classList.remove("play");
-  playBtn.querySelector("i.fas").classList.add("fa-play");
-  playBtn.querySelector("i.fas").classList.remove("fa-pause");
+  playBtn.classList.remove("img-pause");
   audio.pause();
 }
 
 function play() {
   musicPlayer.classList.add("play");
-  playBtn.querySelector("i.fas").classList.remove("fa-play");
-  playBtn.querySelector("i.fas").classList.add("fa-pause");
+  playBtn.classList.add("img-pause");
   audio.play();
 }
 
@@ -30,23 +27,11 @@ playBtn.addEventListener("click", () => {
 
 audio.addEventListener("ended", () => {
   musicPlayer.classList.remove("play");
-  playBtn.querySelector("i.fas").classList.add("fa-play");
-  playBtn.querySelector("i.fas").classList.remove("fa-pause");
 });
 
 audio.addEventListener("timeupdate", e => {
-  const { duration, currentTime } = e.srcElement;
-  // console.log(duration, "duration", currentTime, "currentTime");
-  const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
-});
-
-progressContainer.addEventListener("click", function(e) {
-  const width = this.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
-  console.log(duration, "(duration");
-  console.log(clickX, "(clickX");
-  console.log(width, "width");
-  audio.currentTime = (clickX / width) * duration;
+  const { currentTime } = e.srcElement;
+  if (currentTime > 15) {
+    telegramLink.classList.add("telegram-active");
+  }
 });
